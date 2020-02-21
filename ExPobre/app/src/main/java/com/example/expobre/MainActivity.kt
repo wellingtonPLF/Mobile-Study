@@ -20,14 +20,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
 
         //this.gerarNovoJogo(null)     //Add onclick no xml e chamar essa função [Forma1]
         //this.botao.setOnClickListener({gerarNovoJogo(it)}) //Sem a add do onclick no xml [Forma2]
-        this.botao.setOnClickListener(this)
+        //this.botao.setOnClickListener(this) //[Forma 3]
     }
 
-    override fun onClick(v: View?) {
-        this.tvN.text = Megasena.getInstance().joinToString(" ")
-    }
-    
-    //fun gerarNovoJogo(view: View?){
+    //override fun onClick(v: View?) {                                  //Forma 3
     //    this.tvN.text = Megasena.getInstance().joinToString(" ")
     //}
+    
+    //fun gerarNovoJogo(view: View?){                                   //Forma 1 e 2
+    //    this.tvN.text = Megasena.getInstance().joinToString(" ")
+    //}
+    
+    /* Forma 4 */
+    
+    inner class OnClickBotao : View.OnClickListener{
+        override fun onClick(v: View?) {                                  //Forma 3
+            this@MainActivity.tvN.text = Megasena.getInstance().joinToString(" ")
+            
+        }
+    }
 }
