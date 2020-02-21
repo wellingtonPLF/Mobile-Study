@@ -18,10 +18,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         this.botao = findViewById(R.id.button)
         this.tvN = findViewById(R.id.tvNumber)
 
+        //this.gerarNovoJogo(null)
         botao.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         this.tvN.text = Megasena.getInstance().joinToString(" ")
     }
+    
+    //fun gerarNovoJogo(view: View?){
+    //    this.tvN.text = Megasena.getInstance().joinToString(" ")
+    //}
 }
