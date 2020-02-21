@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(){. //.View.OnClickListener
+class MainActivity : AppCompatActivity(){. //.View.OnClickListener [Forma 3]
     private lateinit var tvN: TextView
     private lateinit var botao: Button
 
@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity(){. //.View.OnClickListener
         //this.gerarNovoJogo(null)     //Add onclick no xml e chamar essa função [Forma1]
         //this.botao.setOnClickListener({gerarNovoJogo(it)}) //Sem a add do onclick no xml [Forma2]
         //this.botao.setOnClickListener(this) //[Forma 3]
+        
+        this.botao.setOnClickListener(OnClickBotao()) //Forma 4
     }
 
     //override fun onClick(v: View?) {                                  //Forma 3
