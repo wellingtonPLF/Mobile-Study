@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         this.tvN = findViewById(R.id.tvNumber)
 
         //this.gerarNovoJogo(null)     //Add onclick no xml e chamar essa função [Forma1]
-        //this.botao.setOnClickListener({gerarNovoJogo(it)}) // [Forma2]
+        //this.botao.setOnClickListener({gerarNovoJogo(it)}) //Sem a add do onclick no xml [Forma2]
         this.botao.setOnClickListener(this)
     }
 
