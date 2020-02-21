@@ -7,7 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener{
+class MainActivity : AppCompatActivity(){. //.View.OnClickListener
     private lateinit var tvN: TextView
     private lateinit var botao: Button
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     /* Forma 4 */
     
     inner class OnClickBotao : View.OnClickListener{
-        override fun onClick(v: View?) {                                  //Forma 3
+        override fun onClick(v: View?) {                                 
             this@MainActivity.tvN.text = Megasena.getInstance().joinToString(" ")
             
         }
