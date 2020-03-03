@@ -12,6 +12,7 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btVai: Button
+    private lateinit var btSobre: Button
     private lateinit var etMensagem: EditText
     val outro = 1
 
@@ -20,9 +21,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         this.btVai = findViewById(R.id.btVai)
+        this.btSobre = findViewById(R.id.btSobre)
         this.etMensagem = findViewById(R.id.etMensagemVai)
 
         this.btVai.setOnClickListener(OnClickBotao())
+        this.btSobre.setOnClickListener {
+            val intent = Intent(this, TelaSobre::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
