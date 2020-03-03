@@ -19,42 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Log.i("APP_VAI_VOLTA", "Main - onCreate")
-
         this.btVai = findViewById(R.id.btVai)
         this.etMensagem = findViewById(R.id.etMensagemVai)
 
         this.btVai.setOnClickListener(OnClickBotao())
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i("APP_VAI_VOLTA", "Main - onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.i("APP_VAI_VOLTA", "Main - onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.i("APP_VAI_VOLTA", "Main - onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i("APP_VAI_VOLTA", "Main - onStop")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.i("APP_VAI_VOLTA", "Main - onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i("APP_VAI_VOLTA", "Main - onDestroy")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
