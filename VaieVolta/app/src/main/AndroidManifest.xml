@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Outra"></activity>
-        <activity android:name=".Interesting" />
         <activity android:name=".TelaSobre" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -16,8 +16,7 @@ class TelaSobre : AppCompatActivity() {
         this.imagem = findViewById(R.id.iMe)
 
         this.imagem.setOnClickListener {
-            val intent = Intent(this, Interesting::class.java)
-            startActivity(intent)
+            finish()
         }
     }
 }
