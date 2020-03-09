@@ -1,12 +1,16 @@
 package com.example.diversos
 
 import android.Manifest
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.ImageView
 import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -22,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btSMS: Button
     private lateinit var btYoutube: Button
     private lateinit var btFoto: Button
-
+    val pegarFoto = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +53,27 @@ class MainActivity : AppCompatActivity() {
         this.btSMS.setOnClickListener({ sms() })
         this.btYoutube.setOnClickListener({ youtube() })
         this.btFoto.setOnClickListener({ foto() })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(resultCode == Activity.RESULT_OK){
+            if(requestCode == pegarFoto){
+                val imageBitmap = data?.extras?.get("data") as Bitmap
+
+                val janela = AlertDialog.Builder(this)
+                janela.setTitle("Minha foto")
+                janela.setIcon(R.mipmap.ic_launcher)
+                janela.setPositiveButton("Ok", null)
+
+                val imageView = ImageView(this)
+                imageView.setImageBitmap(imageBitmap)
+
+                janela.setView(imageView)
+
+                janela.create().show()
+            }
+        }
     }
 
     fun html(){
@@ -80,7 +105,6 @@ class MainActivity : AppCompatActivity() {
         else{
             Toast.makeText(this, "Ligação Indisponível", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     fun compartilhar(){
@@ -158,7 +182,6 @@ class MainActivity : AppCompatActivity() {
 
     fun foto(){
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-
-        startActivity(intent)
+        startActivityForResult(intent, pegarFoto)
     }
 }
