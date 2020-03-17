@@ -33,6 +33,7 @@ class OutroRuim : AppCompatActivity() {
         this.btSalvar = findViewById(R.id.btFormSalvar)
         this.btCancelar = findViewById(R.id.btFormCancelar)
         this.btFoto = findViewById(R.id.btFoto)
+        this.imgvFoto = findViewById(R.id.imgvFoto)
 
         this.btSalvar.setOnClickListener({ salvar() })
         this.btFoto.setOnClickListener({ foto() })
