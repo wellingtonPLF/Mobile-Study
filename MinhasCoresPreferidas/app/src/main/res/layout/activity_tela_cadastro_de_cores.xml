@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TelaCadastroDeCores">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="Cadastro de Cores"
+            android:textSize="32sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/etNomeCor"
+                android:gravity="center"
+                android:textSize="32sp"
+                android:hint="Nome da Cor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+            <EditText
+                android:id="@+id/etHexadecimalCor"
+                android:gravity="center"
+                android:hint="Hexadecimal da Cor"
+                android:textSize="32sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </EditText>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btSalvarCor"
+        android:background="@color/colorAccent"
+        android:textColorHint="@android:color/white"
+        android:hint="Salvar"
+        android:textSize="25sp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Button>
+</LinearLayout>
