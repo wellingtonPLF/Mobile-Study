@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.example.expobre
 
 import androidx.appcompat.app.AppCompatActivity
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         this.tvN.text = Megasena.getInstance().joinToString(" ")
     }
 }
-=======
+/*
 package com.example.expobre
 
 import androidx.appcompat.app.AppCompatActivity
@@ -71,4 +70,4 @@ class MainActivity : AppCompatActivity(){. //.View.OnClickListener [Forma 3]
         }
     }
 }
->>>>>>> a2b5b57b2f386e9892e6c772b37608b7fa1a35ac
+*/
