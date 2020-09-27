@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btTelaCadastro: Button
     private lateinit var lista : CadastroCores
 
-    val TOTEN = 1
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -53,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         this.btTelaCadastro.setOnClickListener{
             val intent = Intent(this, TelaCadastroDeCores::class.java)
-            startActivityForResult(intent, TOTEN)
+            startActivityForResult(intent)
         }
     }
 
