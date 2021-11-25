@@ -3,14 +3,16 @@ package com.example.deuruim
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.SeekBar
-import androidx.core.view.drawToBitmap
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.toBitmap
+
 
 class OutroRuim : AppCompatActivity() {
 
@@ -45,7 +47,8 @@ class OutroRuim : AppCompatActivity() {
     fun salvar(){
         val descricao = this.etDescricao.text.toString()
         val nota = this.sbNota.progress
-        val foto = this.imgvFoto.drawToBitmap()
+        val foto = (this.imgvFoto.getDrawable() as BitmapDrawable).bitmap
+        //val foto = this.imgvFoto.drawToBitmap()
 
         val evento = Evento(descricao, nota, foto)
 

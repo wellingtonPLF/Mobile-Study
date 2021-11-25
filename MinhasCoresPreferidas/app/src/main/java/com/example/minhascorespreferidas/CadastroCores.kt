@@ -1,30 +1,30 @@
 package com.example.minhascorespreferidas
 
-class CadastroCores {
+import java.io.Serializable
 
-    private lateinit var lista : ArrayList<String>
+class CadastroCores(nome: String, hexadecimal: String) : Serializable{
+
+    private lateinit var nome :String
+    private lateinit var hexadecimal: String
 
     init {
-        this.lista = ArrayList()
+        this.nome = nome
+        this.hexadecimal = hexadecimal
     }
 
-    fun add(cor : String){
-        this.lista.add(cor)
+    fun getNome() : String{
+        return this.nome
     }
 
-    fun get(index : Int) : String{
-        return this.lista.get(index)
+    fun getHexadecimal() : String{
+        return this.hexadecimal
     }
 
-    fun get() : ArrayList<String>{
-        return this.lista
+    fun setNome(nome: String){
+        this.nome = nome
     }
 
-    fun count() : Int{
-        return this.lista.count()
-    }
-
-    fun remove(index : Int){
-        lista.removeAt(index)
+    fun setHexadecimal(hexadecimal: String){
+        this.hexadecimal = hexadecimal
     }
 }
